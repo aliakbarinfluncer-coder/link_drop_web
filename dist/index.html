@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkDrop — Modern Video Downloader for Social Media</title>
+    <meta name="description" content="Download videos, reels, and shorts from Instagram, TikTok, YouTube Shorts, Pinterest, Facebook, and X in one tap with zero watermarks." />
+    <meta name="theme-color" content="#09090b" />
+
+    <!-- Google Fonts: Plus Jakarta Sans, Space Grotesk, Bebas Neue -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+    <script type="module" crossorigin src="/assets/index-7e6af-BY.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CE5k5IaW.css">
+  </head>
+  <body>
+    <!-- Ambient Background Mesh Lighting -->
+    <div class="bg-mesh" aria-hidden="true">
+      <div class="mesh-glow mesh-1"></div>
+      <div class="mesh-glow mesh-2"></div>
+      <div class="mesh-grid"></div>
+    </div>
+
+    <!-- Alert Toast Banner (Screenshot 5) -->
+    <div id="toast-banner" class="toast-banner hidden" role="alert" aria-live="assertive">
+      <div class="toast-content">
+        <svg class="toast-icon animate-spin-pulse" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+          <line x1="12" y1="7" x2="12" y2="13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          <circle cx="12" cy="17" r="1.2" />
+        </svg>
+        <span id="toast-message" class="toast-text">NO URL FOUND IN CLIPBOARD</span>
+      </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-link">
+          <div class="brand-icon animated-logo-drop">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#cbfb1c">
+              <path class="drop-shape" d="M12 21l-8-8h16l-8 8z" />
+              <rect x="4" y="5" width="16" height="2.5" rx="1.2" fill="#ffffff" />
+              <rect x="6" y="9" width="12" height="2.2" rx="1.1" fill="#cbfb1c" />
+            </svg>
+          </div>
+          <span class="brand-name">LinkDrop</span>
+          <span class="brand-badge">WEB</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="nav-links">
+          <a href="#downloader" class="nav-link">Downloader</a>
+          <a href="#platforms" class="nav-link">Platforms</a>
+          <a href="#app-preview" class="nav-link">App Screenshots</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#mobile-app" class="nav-link">Download APK</a>
+        </nav>
+
+        <!-- Right Header Actions -->
+        <div class="header-actions">
+          <!-- Dark / Light Theme Switcher -->
+          <button id="theme-toggle-btn" class="icon-toggle-btn" aria-label="Toggle Theme" title="Switch Light/Dark Mode">
+            <svg class="sun-icon animated-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="moon-icon animated-moon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+
+          <!-- Download Mobile App Button -->
+          <button id="header-download-btn" class="btn-primary-header">
+            <svg class="anim-bounce-down" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+            </svg>
+            <span>Get Mobile App</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+      
+      <!-- HERO SECTION: 100% PURE 1-TAP DROP -->
+      <section class="hero-section" id="downloader">
+        <div class="hero-container">
+          
+          <!-- Announcement Pill -->
+          <div class="hero-pill">
+            <span class="pulse-indicator"></span>
+            <span>LinkDrop v2.0 • 1-Tap Clipboard Auto-Detection</span>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 class="hero-title">
+            Download Any Video.<br />
+            <span class="gradient-text">In One Single Tap.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Works with Instagram Reels, YouTube Shorts, TikTok, Pinterest, Facebook &amp; X. Just copy a link, push the button, and LinkDrop auto-detects and downloads the video with zero watermarks.
+          </p>
+
+          <!-- Interactive Downloader Studio Card (Pure 1-Tap Orb) -->
+          <div class="downloader-card pure-orb-studio">
+            
+            <!-- Animated Floating 3D Brand Badges Around Orb (All 6 Platforms) -->
+            <div class="floating-icons-orbit">
+              <!-- Instagram -->
+              <button class="orbit-badge badge-ig" data-sample="https://www.instagram.com/reel/C8xyz123" title="Instagram Reels (Click to test)">
+                <div class="orbit-icon-squircle tile-ig">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  <div class="tile-gloss"></div>
+                </div>
+                <div class="orbit-info">
+                  <span class="orbit-name">Instagram</span>
+                  <span class="orbit-tag">Reels</span>
+                </div>
+              </button>
+
+              <!-- YouTube Shorts -->
+              <button class="orbit-badge badge-yt" data-sample="https://youtube.com/shorts/dQw4w9WgXcQ" title="YouTube Shorts (Click to test)">
+                <div class="orbit-icon-squircle tile-yt">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff">
+                    <path d="M17.77 10.32l-1.2-.5a3.54 3.54 0 0 0 .43-1.74 3.6 3.6 0 0 0-3.6-3.6 3.55 3.55 0 0 0-1.89.54L6.9 8.16a3.6 3.6 0 0 0-1.39 4.88 3.57 3.57 0 0 0 2.5 1.77l1.2.5a3.54 3.54 0 0 0-.43 1.74 3.6 3.6 0 0 0 3.6 3.6 3.55 3.55 0 0 0 1.89-.54l4.61-3.14a3.6 3.6 0 0 0 1.39-4.88 3.57 3.57 0 0 0-2.5-1.77zM10 14.5v-5l4.5 2.5-4.5 2.5z"/>
+                  </svg>
+                  <div class="tile-gloss"></div>
+                </div>
+                <div class="orbit-info">
+                  <span class="orbit-name">YouTube</span>
+                  <span class="orbit-tag">Shorts</span>
+                </div>
+              </button>
+
+              <!-- TikTok -->
+              <button class="orbit-badge badge-tt" data-sample="https://www.tiktok.com/@user/video/73912345678" title="TikTok Video (Click to test)">
+                <div class="orbit-icon-squircle tile-tt">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.34 22a6.34 6.34 0 0 0 6.34-6.32V9.09a8.18 8.18 0 0 0 4.91 1.63v-3.5a4.84 4.84 0 0 1-1-.53z"/>
+                  </svg>
+                  <div class="tile-gloss"></div>
+                </div>
+                <div class="orbit-info">
+                  <span class="orbit-name">TikTok</span>
+                  <span class="orbit-tag">Video</span>
+                </div>
+              </button>
+
+              <!-- Pinterest -->
+              <button class="orbit-badge badge-pin" data-sample="https://www.pinterest.com/pin/123456789" title="Pinterest Pins (Click to test)">
+                <div class="orbit-icon-squircle tile-pin">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff">
+                    <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.334 1.357-.056.208-.18.252-.415.151-1.55-.718-2.518-2.972-2.518-4.782 0-3.896 2.831-7.475 8.163-7.475 4.286 0 7.618 3.055 7.618 7.14 0 4.258-2.684 7.686-6.411 7.686-1.252 0-2.43-.651-2.833-1.423l-.771 2.937c-.28 1.066-1.039 2.403-1.547 3.228C9.566 23.864 10.757 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
+                  </svg>
+                  <div class="tile-gloss"></div>
+                </div>
+                <div class="orbit-info">
+                  <span class="orbit-name">Pinterest</span>
+                  <span class="orbit-tag">Pins</span>
+                </div>
+              </button>
+
+              <!-- Facebook -->
+              <button class="orbit-badge badge-fb" data-sample="https://www.facebook.com/watch/?v=123456789" title="Facebook Watch (Click to test)">
+                <div class="orbit-icon-squircle tile-fb">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  <div class="tile-gloss"></div>
+                </div>
+                <div class="orbit-info">
+                  <span class="orbit-name">Facebook</span>
+                  <span class="orbit-tag">Watch</span>
+                </div>
+              </button>
+
+              <!-- X / Twitter -->
+              <button class="orbit-badge badge-x" data-sample="https://x.com/techinsider/status/17928374" title="X / Twitter (Click to test)">
+                <div class="orbit-icon-squircle tile-x">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="#ffffff">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                  <div class="tile-gloss"></div>
+                </div>
+                <div class="orbit-info">
+                  <span class="orbit-name">X</span>
+                  <span class="orbit-tag">Clips</span>
+                </div>
+              </button>
+            </div>
+
+            <!-- THE TACTILE PUSH DROP ORB -->
+            <div class="orb-showcase-stage" id="orb-stage">
+              <!-- Animated Ripples -->
+              <div class="orb-ripples" aria-hidden="true">
+                <div class="ripple-wave ripple-1"></div>
+                <div class="ripple-wave ripple-2"></div>
+                <div class="ripple-wave ripple-3"></div>
+              </div>
+
+              <!-- Push Orb Button -->
+              <div class="orb-button-wrap">
+                <button id="push-orb-btn" class="push-orb hero-tactile-orb" aria-label="Push to drop and download video from clipboard">
+                  <!-- Specular highlight reflection -->
+                  <div class="specular-glint" id="specular-light"></div>
+
+                  <!-- Wave Liquid Fill Simulation -->
+                  <div class="liquid-wave-container" id="liquid-wave-container">
+                    <div class="liquid-wave wave-back"></div>
+                    <div class="liquid-wave wave-front"></div>
+                  </div>
+
+                  <!-- Idle State: Hand cursor + PUSH IT.. (Screenshots 2 & 4) -->
+                  <div id="orb-idle-content" class="orb-content idle-content">
+                    <div class="hand-icon-wrapper">
+                      <svg class="touch-hand-icon anim-hand-tap" viewBox="0 0 64 64" width="66" height="66">
+                        <line x1="32" y1="4" x2="32" y2="12" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" class="ray ray-top" />
+                        <line x1="16" y1="12" x2="22" y2="18" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" class="ray ray-left" />
+                        <line x1="48" y1="12" x2="42" y2="18" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" class="ray ray-right" />
+                        <path d="M32 16 C30.34 16 29 17.34 29 19 L29 36 L27.5 35.2 C25.8 34.3 23.6 34.7 22.4 36.3 C21.4 37.7 21.6 39.7 22.9 40.8 L30.5 47.3 C32.1 48.7 34.2 49.5 36.3 49.5 L43 49.5 C47.4 49.5 51 45.9 51 41.5 L51 33.5 C51 31.8 49.7 30.5 48 30.5 C47.7 30.5 47.4 30.6 47.1 30.7 C46.7 29.1 45.3 28 43.5 28 C43.2 28 42.9 28.1 42.6 28.2 C42.1 26.6 40.6 25.5 38.8 25.5 C38.5 25.5 38.2 25.6 37.9 25.7 L37.9 22 C37.9 20.34 36.56 19 34.9 19 L34 19 L34 16 C34 14.34 32.66 13 31 13 L31 16 Z" fill="#ffb885" stroke="#111" stroke-width="2.6" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                    <span class="push-text">PUSH IT..</span>
+                  </div>
+
+                  <!-- Dripping State: Percentage + DRIPPING... (Screenshot 1) -->
+                  <div id="orb-dripping-content" class="orb-content dripping-content hidden">
+                    <div class="percentage-display">
+                      <span id="progress-number">0</span><span class="percent-sign">%</span>
+                    </div>
+                    <span class="dripping-text">DRIPPING...</span>
+                    <div class="drop-liquid-bar">
+                      <div id="drop-liquid-fill" class="drop-liquid-fill"></div>
+                    </div>
+                  </div>
+
+                  <!-- Done State: Animated Checkmark + READY -->
+                  <div id="orb-done-content" class="orb-content done-content hidden">
+                    <div class="done-check-circle anim-check-bounce">
+                      <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <span class="done-text">READY!</span>
+                  </div>
+                </button>
+              </div>
+
+              <p class="orb-hint" id="orb-hint">
+                <span class="hint-dot"></span> Copy link to clipboard, then push the button above
+              </p>
+
+              <!-- Quick Test Sample Link Chips For Instant Testing (All 6 Platforms) -->
+              <div class="sample-chips-row">
+                <span class="sample-title">Tap any social platform to test live download:</span>
+                <div class="chips-group">
+                  <button class="sample-chip chip-ig" data-sample="https://www.instagram.com/reel/C8xyz123" title="Try Instagram Reel">
+                    <div class="mini-brand-tile tile-ig">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      </svg>
+                    </div>
+                    <span>Instagram Reel</span>
+                  </button>
+
+                  <button class="sample-chip chip-yt" data-sample="https://youtube.com/shorts/dQw4w9WgXcQ" title="Try YouTube Shorts">
+                    <div class="mini-brand-tile tile-yt">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="#ffffff">
+                        <path d="M17.77 10.32l-1.2-.5a3.54 3.54 0 0 0 .43-1.74 3.6 3.6 0 0 0-3.6-3.6 3.55 3.55 0 0 0-1.89.54L6.9 8.16a3.6 3.6 0 0 0-1.39 4.88 3.57 3.57 0 0 0 2.5 1.77l1.2.5a3.54 3.54 0 0 0-.43 1.74 3.6 3.6 0 0 0 3.6 3.6 3.55 3.55 0 0 0 1.89-.54l4.61-3.14a3.6 3.6 0 0 0 1.39-4.88 3.57 3.57 0 0 0-2.5-1.77zM10 14.5v-5l4.5 2.5-4.5 2.5z"/>
+                      </svg>
+                    </div>
+                    <span>YouTube Shorts</span>
+                  </button>
+
+                  <button class="sample-chip chip-tt" data-sample="https://www.tiktok.com/@user/video/73912345678" title="Try TikTok Video">
+                    <div class="mini-brand-tile tile-tt">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="#ffffff">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.34 22a6.34 6.34 0 0 0 6.34-6.32V9.09a8.18 8.18 0 0 0 4.91 1.63v-3.5a4.84 4.84 0 0 1-1-.53z"/>
+                      </svg>
+                    </div>
+                    <span>TikTok Video</span>
+                  </button>
+
+                  <button class="sample-chip chip-pin" data-sample="https://www.pinterest.com/pin/123456789" title="Try Pinterest Pin">
+                    <div class="mini-brand-tile tile-pin">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="#ffffff">
+                        <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.334 1.357-.056.208-.18.252-.415.151-1.55-.718-2.518-2.972-2.518-4.782 0-3.896 2.831-7.475 8.163-7.475 4.286 0 7.618 3.055 7.618 7.14 0 4.258-2.684 7.686-6.411 7.686-1.252 0-2.43-.651-2.833-1.423l-.771 2.937c-.28 1.066-1.039 2.403-1.547 3.228C9.566 23.864 10.757 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
+                      </svg>
+                    </div>
+                    <span>Pinterest Pin</span>
+                  </button>
+
+                  <button class="sample-chip chip-fb" data-sample="https://www.facebook.com/watch/?v=123456789" title="Try Facebook Video">
+                    <div class="mini-brand-tile tile-fb">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="#ffffff">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      </svg>
+                    </div>
+                    <span>Facebook Video</span>
+                  </button>
+
+                  <button class="sample-chip chip-x" data-sample="https://x.com/techinsider/status/17928374" title="Try X Video Clip">
+                    <div class="mini-brand-tile tile-x">
+                      <svg viewBox="0 0 24 24" width="12" height="12" fill="#ffffff">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                      </svg>
+                    </div>
+                    <span>X Clip</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- RESULT CARD (MEDIA PREVIEW & DOWNLOAD) -->
+            <div class="result-card hidden" id="result-card">
+              <div class="result-card-header">
+                <div class="tag-group">
+                  <span class="platform-tag" id="res-platform-tag">Instagram Reel</span>
+                  <span class="status-badge">Ready to Save</span>
+                </div>
+                <button id="reset-drop-btn" class="reset-link-btn">✕ Drop Another Video</button>
+              </div>
+
+              <div class="video-preview-wrapper">
+                <div class="video-thumbnail-container">
+                  <img id="res-thumbnail" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80" alt="Video preview" />
+                  <div class="play-overlay">
+                    <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                  </div>
+                  <span class="duration-badge" id="res-duration">0:45</span>
+                </div>
+                
+                <div class="video-meta">
+                  <h3 id="res-title" class="video-title">Epic Sunset Flow Reel #viral</h3>
+                  <p id="res-author" class="video-author">@creator • Full HD Stream Available</p>
+                  
+                  <div class="quality-pills">
+                    <span class="q-pill">1080p Full HD</span>
+                    <span class="q-pill">Zero Watermark</span>
+                    <span class="q-pill">High Bitrate Audio</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Download Quality Format Buttons -->
+              <div class="download-actions-grid">
+                <button class="dl-btn primary" id="dl-video-hd-btn">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" class="anim-bounce-down">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                  </svg>
+                  <div class="dl-btn-text">
+                    <strong>Download HD 1080p</strong>
+                    <small>MP4 Video • 18.4 MB</small>
+                  </div>
+                </button>
+
+                <button class="dl-btn secondary" id="dl-video-sd-btn">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                  </svg>
+                  <div class="dl-btn-text">
+                    <strong>Download 720p</strong>
+                    <small>MP4 Video • 9.2 MB</small>
+                  </div>
+                </button>
+
+                <button class="dl-btn audio" id="dl-audio-btn">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M9 18V5l12-2v13M9 9l12-2M6 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm12-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                  </svg>
+                  <div class="dl-btn-text">
+                    <strong>Extract Audio</strong>
+                    <small>MP3 Audio • 3.1 MB</small>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+          </div> <!-- End pure-orb-studio -->
+
+          <!-- App Quick Actions Under Hero -->
+          <div class="hero-cta-buttons">
+            <button id="hero-get-apk-btn" class="cta-btn primary">
+              <svg class="anim-bounce-down" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9996.4482.9996.9993 0 .5511-.4486.9997-.9996.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9996.4482.9996.9993 0 .5511-.4485.9997-.9996.9997m11.4045-6.02l1.996-3.4566c.1147-.1989.0468-.4528-.1521-.5675-.199-.1147-.453-.0469-.5677.1521l-2.0223 3.5022c-1.6083-.7336-3.4144-1.1448-5.3354-1.1448s-3.7271.4112-5.3354 1.1448l-2.0223-3.5022c-.1147-.199-.3687-.2668-.5677-.1521-.1989.1147-.2668.3686-.1521.5675l1.996 3.4566C3.0033 11.2388.5 15.3533.5 20.125h23c0-4.7717-2.5033-8.8862-6.6185-10.8036" />
+              </svg>
+              <span>Download Android APK (14.8 MB)</span>
+            </button>
+
+            <button id="hero-scan-qr-btn" class="cta-btn secondary">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+              </svg>
+              <span>Scan QR Code</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SUPPORTED PLATFORMS BAR (FEATURING ALL REQUESTED NETWORKS) -->
+      <section class="platforms-section" id="platforms">
+        <div class="section-container">
+          <p class="platforms-heading">WORKS SEAMLESSLY WITH ALL MAJOR VIDEO PLATFORMS</p>
+          <div class="platforms-interactive-grid">
+            
+            <!-- Instagram Reels -->
+            <div class="platform-card card-ig">
+              <div class="platform-icon-wrap icon-ig">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </div>
+              <div class="platform-info">
+                <strong>Instagram Reels</strong>
+                <span>Stories &amp; Posts • 1080p HD</span>
+              </div>
+            </div>
+
+            <!-- YouTube Shorts -->
+            <div class="platform-card card-yt">
+              <div class="platform-icon-wrap icon-yt">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </div>
+              <div class="platform-info">
+                <strong>YouTube Shorts</strong>
+                <span>Shorts &amp; Videos • Up to 4K</span>
+              </div>
+            </div>
+
+            <!-- TikTok -->
+            <div class="platform-card card-tt">
+              <div class="platform-icon-wrap icon-tt">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01v8.13c0 1.94-.48 3.86-1.5 5.48-1.42 2.22-3.83 3.67-6.49 3.87-2.65.2-5.32-.7-7.2-2.48C-.39 21.24-.9 18.23-.42 15.4c.48-2.82 2.37-5.18 5.01-6.24 1.25-.5 2.62-.71 3.97-.61v4.13c-.92-.1-1.87.05-2.69.52-1.12.63-1.86 1.83-1.86 3.12 0 1.73 1.24 3.2 2.94 3.49 1.71.29 3.44-.65 4.09-2.25.29-.71.42-1.48.4-2.25V.02z" />
+                </svg>
+              </div>
+              <div class="platform-info">
+                <strong>TikTok Video</strong>
+                <span>Zero Watermark • Clean Audio</span>
+              </div>
+            </div>
+
+            <!-- Pinterest -->
+            <div class="platform-card card-pin">
+              <div class="platform-icon-wrap icon-pin">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                  <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.334 1.357-.056.208-.18.252-.415.151-1.55-.718-2.518-2.972-2.518-4.782 0-3.896 2.831-7.475 8.163-7.475 4.286 0 7.618 3.055 7.618 7.14 0 4.258-2.684 7.686-6.411 7.686-1.252 0-2.43-.651-2.833-1.423l-.771 2.937c-.28 1.066-1.039 2.403-1.547 3.228C9.566 23.864 10.757 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="platform-info">
+                <strong>Pinterest</strong>
+                <span>Video Pins • DIY &amp; Aesthetics</span>
+              </div>
+            </div>
+
+            <!-- Facebook -->
+            <div class="platform-card card-fb">
+              <div class="platform-icon-wrap icon-fb">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </div>
+              <div class="platform-info">
+                <strong>Facebook Watch</strong>
+                <span>Reels &amp; Clips • Fast Extraction</span>
+              </div>
+            </div>
+
+            <!-- X / Twitter -->
+            <div class="platform-card card-x">
+              <div class="platform-icon-wrap icon-x">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </div>
+              <div class="platform-info">
+                <strong>X / Twitter</strong>
+                <span>Clips &amp; Broadcasts • High Bitrate</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTUAL MOBILE APP SCREENSHOTS SHOWCASE (AS SHARED BY USER) -->
+      <section class="app-screenshots-section" id="app-preview">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-subtitle">THE ACTUAL MOBILE APP</span>
+            <h2 class="section-title">Designed for Pure Speed &amp; Simplicity</h2>
+            <p class="section-desc">Experience the exact clean tactile mobile app interface on Android &amp; iOS devices.</p>
+          </div>
+
+          <!-- Screenshots Showcase Grid -->
+          <div class="screenshots-showcase-grid">
+            
+            <!-- Screenshot 1: Push It (Dark Mode) -->
+            <div class="screenshot-card">
+              <div class="device-phone-mockup">
+                <img src="/screenshots/app-push-dark.png" alt="LinkDrop Push It Dark Mode" class="app-screen-img" loading="lazy" />
+              </div>
+              <div class="screenshot-meta">
+                <span class="screen-pill">1-Tap Idle</span>
+                <h4>Push It (Dark Mode)</h4>
+                <p>Tactile glowing orb with zero-friction clipboard trigger.</p>
+              </div>
+            </div>
+
+            <!-- Screenshot 2: 0% Dripping (Dark Mode) -->
+            <div class="screenshot-card highlight-card">
+              <div class="device-phone-mockup">
+                <img src="/screenshots/app-dripping-dark.png" alt="LinkDrop Dripping State" class="app-screen-img" loading="lazy" />
+              </div>
+              <div class="screenshot-meta">
+                <span class="screen-pill active">Dripping State</span>
+                <h4>Dripping Progress</h4>
+                <p>Liquid ripples &amp; dynamic real-time download streaming.</p>
+              </div>
+            </div>
+
+            <!-- Screenshot 3: Push It (Light Mode) -->
+            <div class="screenshot-card">
+              <div class="device-phone-mockup">
+                <img src="/screenshots/app-push-light.png" alt="LinkDrop Push It Light Mode" class="app-screen-img" loading="lazy" />
+              </div>
+              <div class="screenshot-meta">
+                <span class="screen-pill">Neon Citron</span>
+                <h4>Push It (Light Mode)</h4>
+                <p>Radiant cyber-lime glow for daytime video saving.</p>
+              </div>
+            </div>
+
+            <!-- Screenshot 4: Clipboard Error Toast -->
+            <div class="screenshot-card">
+              <div class="device-phone-mockup">
+                <img src="/screenshots/app-toast-dark.png" alt="LinkDrop Clipboard Error Toast" class="app-screen-img" loading="lazy" />
+              </div>
+              <div class="screenshot-meta">
+                <span class="screen-pill error">Smart Alerts</span>
+                <h4>Clipboard Feedback</h4>
+                <p>Instant visual alert when no valid video link is copied.</p>
+              </div>
+            </div>
+
+            <!-- Screenshot 5: Info & Specs Screen -->
+            <div class="screenshot-card">
+              <div class="device-phone-mockup">
+                <img src="/screenshots/app-info.png" alt="LinkDrop Info Screen" class="app-screen-img" loading="lazy" />
+              </div>
+              <div class="screenshot-meta">
+                <span class="screen-pill">Specs</span>
+                <h4>Info &amp; Features</h4>
+                <p>Clean terms, copyright policies, and platform features.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- BENTO FEATURES GRID -->
+      <section class="features-section" id="features">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-subtitle">BUILT FOR SPEED &amp; PURITY</span>
+            <h2 class="section-title">Everything You Need In A Downloader</h2>
+            <p class="section-desc">Designed from the ground up for zero friction, high resolution, and privacy.</p>
+          </div>
+
+          <div class="bento-grid">
+            <div class="bento-card card-highlight">
+              <div class="bento-icon anim-icon-pulse">⚡</div>
+              <h3>1-Tap Clipboard Drip</h3>
+              <p>Simply copy any link from your social app. Push the Drop Orb and LinkDrop instantly extracts and downloads the video automatically.</p>
+            </div>
+
+            <div class="bento-card">
+              <div class="bento-icon anim-icon-float">✨</div>
+              <h3>Zero Watermarks</h3>
+              <p>Download clean, original videos without platform logos or intrusive overlays for high-quality archiving and repurposing.</p>
+            </div>
+
+            <div class="bento-card">
+              <div class="bento-icon anim-icon-pulse">🎬</div>
+              <h3>Crisp 1080p &amp; 4K Support</h3>
+              <p>LinkDrop captures the highest available resolution stream directly from content CDNs with full frame rates.</p>
+            </div>
+
+            <div class="bento-card">
+              <div class="bento-icon anim-icon-float">🎧</div>
+              <h3>Studio Audio Extraction</h3>
+              <p>Extract crystal-clear MP3 audio tracks from any reel or short to save viral music and speeches effortlessly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS SECTION -->
+      <section class="how-it-works-section" id="how-it-works">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-subtitle">EFFORTLESS 3-STEP PROCESS</span>
+            <h2 class="section-title">How LinkDrop Works</h2>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-number">01</div>
+              <h4>Copy Video Link</h4>
+              <p>Open Instagram, YouTube, TikTok, Pinterest, or Facebook, tap Share, and select "Copy Link".</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">02</div>
+              <h4>Push The Orb</h4>
+              <p>Open LinkDrop and tap the glowing central orb to trigger the instant drip.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">03</div>
+              <h4>Instant Save</h4>
+              <p>Choose HD 1080p, 720p, or MP3 Audio and save the media straight to your files.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MOBILE APP SHOWCASE SECTION WITH QR CODE -->
+      <section class="mobile-showcase-section" id="mobile-app">
+        <div class="section-container showcase-box">
+          <div class="showcase-content">
+            <span class="showcase-tag">NATIVE MOBILE EXPERIENCE</span>
+            <h2 class="showcase-title">Get LinkDrop for Android &amp; iOS</h2>
+            <p class="showcase-desc">
+              Download videos directly from your social apps with 1-tap share-sheet integration, background downloading, and offline gallery storage!
+            </p>
+
+            <div class="showcase-features-list">
+              <div class="showcase-feat">
+                <span class="feat-check">✓</span>
+                <span>Direct Share-Sheet Integration from Instagram &amp; TikTok</span>
+              </div>
+              <div class="showcase-feat">
+                <span class="feat-check">✓</span>
+                <span>Background Download Manager &amp; Offline Gallery</span>
+              </div>
+              <div class="showcase-feat">
+                <span class="feat-check">✓</span>
+                <span>Light &amp; Dark Theme with Haptic Feedback</span>
+              </div>
+            </div>
+
+            <div class="showcase-actions">
+              <button id="showcase-download-apk-btn" class="btn-primary-showcase">
+                <svg class="anim-bounce-down" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9996.4482.9996.9993 0 .5511-.4486.9997-.9996.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9996.4482.9996.9993 0 .5511-.4485.9997-.9996.9997m11.4045-6.02l1.996-3.4566c.1147-.1989.0468-.4528-.1521-.5675-.199-.1147-.453-.0469-.5677.1521l-2.0223 3.5022c-1.6083-.7336-3.4144-1.1448-5.3354-1.1448s-3.7271.4112-5.3354 1.1448l-2.0223-3.5022c-.1147-.199-.3687-.2668-.5677-.1521-.1989.1147-.2668.3686-.1521.5675l1.996 3.4566C3.0033 11.2388.5 15.3533.5 20.125h23c0-4.7717-2.5033-8.8862-6.6185-10.8036" />
+                </svg>
+                <span>Download APK (v1.2.0)</span>
+              </button>
+
+              <button id="showcase-pwa-btn" class="btn-secondary-showcase">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="3" />
+                  <line x1="12" y1="18" x2="12" y2="18.01" />
+                </svg>
+                <span>Install Web App (PWA)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic QR Code Card -->
+          <div class="showcase-qr-side">
+            <div class="qr-floating-card">
+              <div class="qr-inner-box" id="showcase-qr-wrap">
+                <!-- Rendered by TypeScript -->
+              </div>
+              <p class="qr-label">Scan with your phone to download APK</p>
+              <span class="qr-badge">Android &amp; iOS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="section-container footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="#cbfb1c">
+              <path d="M12 21l-8-8h16l-8 8z" />
+              <rect x="4" y="5" width="16" height="2.5" rx="1.2" fill="#ffffff" />
+            </svg>
+            <span>LinkDrop</span>
+          </div>
+          <p class="footer-tagline">The fastest, cleanest video hub for modern creators and consumers.</p>
+        </div>
+
+        <div class="footer-disclaimer">
+          <strong>Important Note &amp; Disclaimer:</strong>
+          <p>LinkDrop is intended for personal archiving and fair-use educational purposes only. Users are solely responsible for respecting platform terms and content creators' intellectual property rights.</p>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 LinkDrop. All rights reserved.</span>
+          <div class="footer-links">
+            <button id="footer-info-btn" class="footer-link-btn">About &amp; Info</button>
+            <a href="#downloader" class="footer-link">Back to Top ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Support Button -->
+    <a 
+      href="https://wa.me/?text=Hello!%20I%20have%20a%20question%20about%20LinkDrop." 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="whatsapp-fab" 
+      aria-label="Chat with us on WhatsApp"
+      title="Chat on WhatsApp"
+    >
+      <div class="whatsapp-circle anim-pulse-subtle">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="#ffffff">
+          <path d="M16 2.5C8.544 2.5 2.5 8.544 2.5 16c0 2.652.766 5.127 2.088 7.218L2.73 29.27l6.233-1.782C11.004 28.59 13.435 29.5 16 29.5c7.456 0 13.5-6.044 13.5-13.5S23.456 2.5 16 2.5zm7.842 18.52c-.328.92-1.637 1.748-2.678 1.97-.714.152-1.646.273-4.787-1.026-4.015-1.66-6.602-5.748-6.804-6.015-.198-.268-1.63-2.17-1.63-4.137 0-1.968 1.03-2.936 1.396-3.337.368-.4 0.8-.5 1.07-.5.27 0 .54.003.774.015.247.012.576-.093.9.686.335.81 1.144 2.788 1.244 2.99.1.203.167.44.033.706-.134.268-.2.436-.398.67-.202.235-.425.525-.607.705-.202.202-.413.421-.177.825.235.405 1.047 1.728 2.247 2.796 1.545 1.376 2.848 1.802 3.253 2.004.405.202.64.168.877-.1.238-.27 1.01-1.18 1.28-1.583.268-.404.536-.336.902-.202.368.134 2.33 1.098 2.73 1.299.402.201.67.301.77.47.1.168.1.97-.228 1.89z" />
+        </svg>
+      </div>
+    </a>
+
+    <!-- Mobile App Download Modal -->
+    <div id="app-modal" class="app-modal hidden" role="dialog" aria-modal="true" aria-labelledby="app-modal-title">
+      <div class="modal-backdrop" id="app-modal-backdrop"></div>
+      <div class="app-modal-card">
+        <button id="app-modal-close-btn" class="modal-close-btn" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+
+        <div class="app-modal-badge">
+          <div class="app-icon-squircle">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="#cbfb1c">
+              <path d="M12 18l-8-8h16l-8 8z" />
+              <rect x="4" y="5" width="16" height="2.5" rx="1.2" fill="#ffffff" />
+            </svg>
+          </div>
+          <div class="app-badge-info">
+            <h3 id="app-modal-title">LinkDrop Mobile</h3>
+            <span class="version-tag">v1.2.0 • Android APK &amp; iOS PWA</span>
+          </div>
+        </div>
+
+        <p class="app-modal-desc">
+          Scan the QR code below on your mobile device to download the official APK directly, or tap Download APK:
+        </p>
+
+        <div class="modal-qr-box">
+          <div class="modal-qr-frame" id="modal-qr-svg-wrap">
+            <!-- Rendered by TypeScript -->
+          </div>
+          <span class="modal-qr-note">Scan with phone camera</span>
+        </div>
+
+        <div class="modal-action-stack">
+          <button id="download-apk-btn" class="modal-btn-primary">
+            <svg class="anim-bounce-down" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9996.4482.9996.9993 0 .5511-.4486.9997-.9996.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9996.4482.9996.9993 0 .5511-.4485.9997-.9996.9997m11.4045-6.02l1.996-3.4566c.1147-.1989.0468-.4528-.1521-.5675-.199-.1147-.453-.0469-.5677.1521l-2.0223 3.5022c-1.6083-.7336-3.4144-1.1448-5.3354-1.1448s-3.7271.4112-5.3354 1.1448l-2.0223-3.5022c-.1147-.199-.3687-.2668-.5677-.1521-.1989.1147-.2668.3686-.1521.5675l1.996 3.4566C3.0033 11.2388.5 15.3533.5 20.125h23c0-4.7717-2.5033-8.8862-6.6185-10.8036" />
+            </svg>
+            <span>Download APK (14.8 MB)</span>
+          </button>
+
+          <button id="pwa-install-btn" class="modal-btn-secondary">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="3" />
+              <line x1="12" y1="18" x2="12" y2="18.01" />
+            </svg>
+            <span>Add to Home Screen (PWA)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info / About Modal (Screenshot 3) -->
+    <div id="info-modal" class="info-modal hidden" role="dialog" aria-modal="true" aria-labelledby="info-heading">
+      <div class="modal-backdrop" id="info-modal-backdrop"></div>
+      <div class="info-modal-card">
+        <div class="info-top-bar">
+          <h2 id="info-heading" class="info-top-title">About LinkDrop</h2>
+          <button id="info-close-btn" class="modal-close-btn">✕</button>
+        </div>
+
+        <div class="info-body-scroll">
+          <div class="info-block">
+            <h3 class="info-block-title">ALL-IN-ONE VIDEO HUB</h3>
+            <p class="info-block-text">
+              LinkDrop is your personal video utility to access, preview, and save content from multiple platforms in one simple and clean interface.
+            </p>
+          </div>
+
+          <div class="info-block">
+            <h3 class="info-block-title">KEY FEATURES</h3>
+            <ul class="info-feature-list">
+              <li>• Smooth, minimal and accessible design</li>
+              <li>• Ultra-fast video stream extraction</li>
+              <li>• Native Light &amp; Dark theme support</li>
+              <li>• One-tap clipboard auto-detection</li>
+              <li>• Clean 1080p MP4 &amp; MP3 audio outputs</li>
+            </ul>
+          </div>
+
+          <div class="info-block">
+            <h3 class="info-block-title">IMPORTANT NOTE</h3>
+            <p class="info-block-text">
+              LinkDrop is intended for personal and educational use only. Users are responsible for respecting platform terms of service and original creator rights.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
