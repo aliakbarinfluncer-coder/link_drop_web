@@ -12,8 +12,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
 
-    <script type="module" crossorigin src="/assets/index-7e6af-BY.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CE5k5IaW.css">
+    <!-- Immediate Theme Application to prevent FOUC & ensure Netlify reliability -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('reeldrop_theme_preference') || localStorage.getItem('linkdrop_theme');
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+            document.documentElement.setAttribute('data-theme', 'light');
+          } else {
+            document.documentElement.classList.remove('light');
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+
+        window.toggleLinkDropTheme = function() {
+          var html = document.documentElement;
+          var isLight = html.classList.contains('light');
+          var next = isLight ? 'dark' : 'light';
+          if (next === 'light') {
+            html.classList.remove('dark');
+            html.classList.add('light');
+            html.setAttribute('data-theme', 'light');
+          } else {
+            html.classList.remove('light');
+            html.classList.add('dark');
+            html.setAttribute('data-theme', 'dark');
+          }
+          try {
+            localStorage.setItem('reeldrop_theme_preference', next);
+            localStorage.setItem('linkdrop_theme', next);
+          } catch (e) {}
+          var metaTheme = document.querySelector('meta[name="theme-color"]');
+          if (metaTheme) {
+            metaTheme.setAttribute('content', next === 'dark' ? '#000000' : '#f7f9f3');
+          }
+          return next;
+        };
+      })();
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-BWxDoYKb.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DpMyv1rm.css">
   </head>
   <body>
     <!-- Ambient Background Mesh Lighting -->
@@ -63,7 +105,7 @@
         <!-- Right Header Actions -->
         <div class="header-actions">
           <!-- Dark / Light Theme Switcher -->
-          <button id="theme-toggle-btn" class="icon-toggle-btn" aria-label="Toggle Theme" title="Switch Light/Dark Mode">
+          <button id="theme-toggle-btn" class="icon-toggle-btn" aria-label="Toggle Theme" title="Switch Light/Dark Mode" onclick="window.toggleLinkDropTheme &amp;&amp; window.toggleLinkDropTheme()">
             <svg class="sun-icon animated-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="5" />
               <line x1="12" y1="1" x2="12" y2="3" />

@@ -2,17 +2,20 @@
 
 export type Theme = 'dark' | 'light';
 
-const THEME_KEY = 'reeldrop_theme_preference';
+const THEME_KEYS = ['reeldrop_theme_preference', 'linkdrop_theme'];
 
-export function initTheme(): void {
-  const saved = localStorage.getItem(THEME_KEY) as Theme | null;
-  const preferredTheme: Theme = saved || 'dark'; // Dark mode is default per screenshots
-  applyTheme(preferredTheme);
-
-  const themeBtn = document.getElementById('theme-toggle-btn');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', toggleTheme);
+export function getSavedTheme(): Theme {
+  try {
+    for (const key of THEME_KEYS) {
+      const val = localStorage.getItem(key);
+      if (val === 'light' || val === 'dark') {
+        return val as Theme;
+      }
+    }
+  } catch {
+    // Ignore storage restriction errors in private / in-app webviews
   }
+  return 'dark'; // Dark mode is default
 }
 
 export function applyTheme(theme: Theme): void {
@@ -20,9 +23,11 @@ export function applyTheme(theme: Theme): void {
   if (theme === 'light') {
     html.classList.remove('dark');
     html.classList.add('light');
+    html.setAttribute('data-theme', 'light');
   } else {
     html.classList.remove('light');
     html.classList.add('dark');
+    html.setAttribute('data-theme', 'dark');
   }
 
   // Update meta theme-color for mobile address bars
@@ -31,7 +36,13 @@ export function applyTheme(theme: Theme): void {
     metaTheme.setAttribute('content', theme === 'dark' ? '#000000' : '#f7f9f3');
   }
 
-  localStorage.setItem(THEME_KEY, theme);
+  try {
+    for (const key of THEME_KEYS) {
+      localStorage.setItem(key, theme);
+    }
+  } catch {
+    // Ignore storage restriction errors
+  }
 }
 
 export function toggleTheme(): Theme {
@@ -40,3 +51,27 @@ export function toggleTheme(): Theme {
   applyTheme(nextTheme);
   return nextTheme;
 }
+
+export function initTheme(): void {
+  const preferredTheme = getSavedTheme();
+  applyTheme(preferredTheme);
+
+  // Direct element listener
+  const themeBtn = document.getElementById('theme-toggle-btn');
+  if (themeBtn) {
+    themeBtn.removeEventListener('click', toggleTheme);
+    themeBtn.addEventListener('click', toggleTheme);
+  }
+
+  // Also attach via document event delegation so it NEVER misses clicks
+  document.addEventListener('click', (e) => {
+    const target = (e.target as HTMLElement | null)?.closest('#theme-toggle-btn');
+    if (target) {
+      toggleTheme();
+    }
+  });
+
+  // Expose to window for inline onclick fallback
+  (window as unknown as { toggleLinkDropTheme: () => Theme }).toggleLinkDropTheme = toggleTheme;
+}
+

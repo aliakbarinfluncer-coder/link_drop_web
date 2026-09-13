@@ -308,6 +308,18 @@ html.light .moon-icon { display: block; }
   filter: brightness(1.1);
 }
 
+@media (max-width: 520px) {
+  .header-container {
+    padding: 12px 16px;
+  }
+  .btn-primary-header span {
+    display: none;
+  }
+  .btn-primary-header {
+    padding: 10px 12px;
+  }
+}
+
 /* ==========================================================
    ANIMATED ICONS & SPECIAL MICRO-INTERACTIONS
    ========================================================== */

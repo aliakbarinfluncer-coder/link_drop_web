@@ -7,7 +7,7 @@ import { startDripping, resetOrb, getOrbState } from './downloader';
 import { initInfoModal } from './components/infoModal';
 import { initAppModal } from './components/appModal';
 
-document.addEventListener('DOMContentLoaded', () => {
+function init(): void {
   // 1. Initialize Theme & Modals
   initTheme();
   initInfoModal();
@@ -66,4 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
