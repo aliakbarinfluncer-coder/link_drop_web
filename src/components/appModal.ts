@@ -45,18 +45,15 @@ export function initAppModal(): void {
     buttonEl.innerHTML = `<span>Downloading LinkDrop.apk...</span>`;
 
     setTimeout(() => {
-      const blob = new Blob(['LinkDrop Mobile APK Binary v1.2.0'], { type: 'application/vnd.android.package-archive' });
-      const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
-      a.href = url;
+      a.href = '/LinkDrop-v1.2.0.apk';
       a.download = 'LinkDrop-v1.2.0.apk';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      URL.revokeObjectURL(url);
 
       buttonEl.innerHTML = original;
-    }, 800);
+    }, 500);
   };
 
   if (heroApkBtn) heroApkBtn.addEventListener('click', () => triggerApk(heroApkBtn));
